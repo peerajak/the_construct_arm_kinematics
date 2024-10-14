@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="kinematics_basic_concepts" name="circular_motion_ee.py" type="circular_motion_ee.py" output="screen"> 
+    </node>
+    <node pkg="kinematics_basic_concepts" name="planar_end_effector_mover.py" type="planar_end_effector_mover.py" output="screen"> 
+    </node>
+</launch>
+
