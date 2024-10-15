@@ -11,8 +11,8 @@ class EndEffectorWorkingSpace:
     Pee_x: float
     Pee_y: float
     # Orientation of the X-axis respect frame 0
-    Xee_x: float
-    Xee_y: float
+    Xee_x: float #X_{3_x}
+    Xee_y: float #X_{3_y}
 
 class ComputeIk():
 
@@ -35,8 +35,8 @@ class ComputeIk():
         Pee_y = end_effector_pose.Pee_y
 
         # The Angle that Xee makes with frames 0 X-axis
-        Xee_x = end_effector_pose.Xee_x
-        Xee_y = end_effector_pose.Xee_y
+        Xee_x = end_effector_pose.Xee_x #X_{3_x}
+        Xee_y = end_effector_pose.Xee_y #X_{3_y}
 
         # We get all the DH parameters
         r1 = self.get_dh_param("r1")
@@ -55,8 +55,8 @@ class ComputeIk():
         # We declare all the equations for theta1, theta2, theta3 and auxiliary
         #########################################################################
         # theta_2
-        U = r3 * Xee_x
-        W = r3 * Xee_y
+        U = r3 * Xee_x #X_{3_x}
+        W = r3 * Xee_y #X_{3_y}
 
         G = ( pow(Pee_x,2) + pow(Pee_y,2) + pow(U,2) + pow(W,2)  - (2.0 * (Pee_x*U + Pee_y*W)) - pow(r1,2) - pow(r2,2)) / (2.0 * r1 * r2)
 
